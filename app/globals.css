@@ -108,5 +108,17 @@ html {
   font-size: var(--headlineBig);
   line-height: var(--headlineBig);
   color: var(--backgroundColor);
+  text-align: center;
   filter: drop-shadow(0 0 0.06rem rgb(2, 2, 2));
+}
+
+/* For devices with a maximum width of 768px (typical tablets and mobile devices) */
+@media only screen and (max-width: 768px) {
+ .reveal-text {
+  font-weight: 800;
+  font-size: 4rem;
+  line-height: 4rem;
+  text-align: center;
+  color: var(--backgroundColor);
+}
 }

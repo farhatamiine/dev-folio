@@ -37,6 +37,7 @@ function Template1({ username }: Template1Props) {
         </div>
       </div>
       <Hero />
+      <div className="h-[50rem] w-full"></div>
     </main>
   );
 }

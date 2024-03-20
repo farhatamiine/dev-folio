@@ -21,7 +21,7 @@ function Hero({}: HeroProps) {
     ];
   }
   const text =
-    "I'm Amine, a passionate software engineer with a knack for building user-friendly and robust web applications.";
+    "I'm Amine, a web developer dedicated to creating beautiful apps.";
   gsap.registerPlugin(ScrollTrigger);
 
   useEffect(() => {
@@ -42,13 +42,13 @@ function Hero({}: HeroProps) {
   }, []);
 
   return (
-    <section className={"p-5 md:p-24 "} id={"about"}>
+    <section className={"md:p-24 "} id={"about"}>
       <div className={"font-bold max-w-7xl mx-auto reveal"}>
-        <div className="w-full" ref={triggerRef}>
+        <div className="w-full p-8" ref={triggerRef}>
           {text.split("").map((word, index) => (
             <span
               key={index}
-              className={"reveal-text"}
+              className={"reveal-text text-center"}
               ref={(ref) => {
                 if (ref) lettersRef.current.push(ref);
               }}
