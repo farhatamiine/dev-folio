@@ -2,6 +2,15 @@
 @tailwind components;
 @tailwind utilities;
  
+
+:root {
+  --backgroundColor: #F7F7F8;
+  --backgroundColorSecondary: #FFFC94;
+  --textPrimaryColor: #2A2A2A;
+
+  --headlineBig: 10rem;
+  --headlineSmall: clamp(1rem, 1.2vw, 6rem);
+}
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -88,4 +97,16 @@ html {
 
 .nav-logo{
   @apply inline-flex items-center justify-center font-bold capitalize text-2xl m-0 p-0
+}
+
+#about {
+   background: var(--backgroundColor);
+}
+
+.reveal-text {
+  font-weight: 800;
+  font-size: var(--headlineBig);
+  line-height: var(--headlineBig);
+  color: var(--backgroundColor);
+  filter: drop-shadow(0 0 0.06rem rgb(2, 2, 2));
 }
