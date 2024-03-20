@@ -8,8 +8,8 @@ import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 interface HeroProps {}
 
 function Hero({}: HeroProps) {
-  const [lettersRef, setlettersRef] = useLetterRefs();
-  const triggerRef = useRef(null);
+  const lettersRef = useRef<HTMLSpanElement[]>([]);
+  const triggerRef = useRef<HTMLDivElement>(null);
 
   function useLetterRefs() {
     const refs = useRef<HTMLSpanElement[]>([]);
@@ -46,7 +46,13 @@ function Hero({}: HeroProps) {
       <div className={"font-bold max-w-7xl mx-auto reveal"}>
         <div className="w-full" ref={triggerRef}>
           {text.split("").map((word, index) => (
-            <span key={index} className={"reveal-text"} ref={setlettersRef}>
+            <span
+              key={index}
+              className={"reveal-text"}
+              ref={(ref) => {
+                if (ref) lettersRef.current.push(ref);
+              }}
+            >
               {word}
             </span>
           ))}
