@@ -17,7 +17,7 @@ export default function RootLayout({
   children: ReactNode;
 }>) {
   return (
-    <html lang="en" className={"h-full bg-[#F7F7F8] "}>
+    <html lang="en" className={"h-full "}>
       <body className={inter.className}>
         <ConvexClientProvider>{children}</ConvexClientProvider>
       </body>

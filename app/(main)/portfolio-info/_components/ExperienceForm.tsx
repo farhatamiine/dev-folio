@@ -24,7 +24,7 @@ const ExperienceForm = () => {
   };
 
   return (
-    <div className="bg-white shadow-md rounded-lg p-6">
+    <div className="w-full p-6">
       <h2 className="text-2xl font-bold mb-4">Add Experience</h2>
       <form
         onSubmit={handleSubmit(onSubmit)}
@@ -56,7 +56,7 @@ const ExperienceForm = () => {
           placeholder="Description"
           {...register("description", { required: true })}
         />
-        <Button type="submit" variant="default">
+        <Button type="submit" className="w-1/4" variant="default">
           Save
         </Button>
       </form>

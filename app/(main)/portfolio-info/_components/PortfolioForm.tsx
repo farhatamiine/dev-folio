@@ -20,7 +20,7 @@ const PortfolioForm = () => {
   };
 
   return (
-    <div className="bg-white shadow-md rounded-lg p-6">
+    <div className="w-full p-6">
       <h2 className="text-2xl font-bold mb-4">Create Portfolio</h2>
       <form
         onSubmit={handleSubmit(onSubmit)}
@@ -40,7 +40,7 @@ const PortfolioForm = () => {
           placeholder="Theme"
           {...register("theme", { required: true })}
         />
-        <Button type="submit" variant="default">
+        <Button type="submit" className="w-1/4" variant="default">
           Save
         </Button>
       </form>
