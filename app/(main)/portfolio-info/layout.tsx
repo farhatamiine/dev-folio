@@ -6,7 +6,7 @@ import { Separator } from "@/components/ui/separator";
 const sidebarNavItems = [
   {
     title: "Profile",
-    href: "/portfolio-info/profile",
+    href: "/portfolio-info",
   },
   {
     title: "Portfolio",
