@@ -11,16 +11,8 @@ import { ProfileCard } from "@/components/generated/profile-card";
 import { useQuery } from "convex/react";
 import { api } from "@/convex/_generated/api";
 
-interface usernameProps {
-  params: {
-    username: string;
-  };
-  children: React.ReactNode;
-}
-function PersonalInfoPage({ params, children }: usernameProps) {
+export default function PersonalInfoPage() {
   const profile = useQuery(api.user.getUserProfile);
-
-  console.log(profile);
 
   return (
     //generate a dashboard for each username
@@ -43,5 +35,3 @@ function PersonalInfoPage({ params, children }: usernameProps) {
     </div>
   );
 }
-
-export default PersonalInfoPage;
