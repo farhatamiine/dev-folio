@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import ExperienceForm from "./_components/ExperienceForm";
 import EducationForm from "./_components/EducationForm";
@@ -6,6 +7,9 @@ import PortfolioForm from "./_components/PortfolioForm";
 import ProjectForm from "./_components/ProjectForm";
 import { Separator } from "@/components/ui/separator";
 import { SidebarNav } from "./_components/SidebarNav";
+import { ProfileCard } from "@/components/generated/profile-card";
+import { useQuery } from "convex/react";
+import { api } from "@/convex/_generated/api";
 
 interface usernameProps {
   params: {
@@ -14,6 +18,10 @@ interface usernameProps {
   children: React.ReactNode;
 }
 function PersonalInfoPage({ params, children }: usernameProps) {
+  const profile = useQuery(api.user.getUserProfile);
+
+  console.log(profile);
+
   return (
     //generate a dashboard for each username
     <div>
@@ -25,6 +33,11 @@ function PersonalInfoPage({ params, children }: usernameProps) {
           </p>
         </div>
         <Separator />
+        <ProfileCard
+          bio={profile?.bio}
+          image={profile?.image}
+          username={profile?.name}
+        />
         <UserProfileForm />
       </div>
     </div>

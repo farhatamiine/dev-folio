@@ -4,6 +4,7 @@ import "./globals.css";
 import ConvexClientProvider from "@/provider/ConvexClientProvider";
 import { ReactNode } from "react";
 import { ThemeProvider } from "@/provider/theme-provider";
+import { Toaster } from "@/components/ui/toaster";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -27,6 +28,7 @@ export default function RootLayout({
             enableSystem
             disableTransitionOnChange
           >
+            <Toaster />
             {children}
           </ThemeProvider>
         </ConvexClientProvider>
